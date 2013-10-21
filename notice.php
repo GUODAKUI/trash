@@ -1,4 +1,5 @@
 <?php
+//HEHE
 	include_once('./inc/dataInformation.php');
 	$id=intval($_GET['id']);
 	if(empty($id)){
