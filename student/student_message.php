@@ -51,7 +51,7 @@ function check()
     	<div id="body">
         	<div id="position">
                 <table style="width:100%; height:100%;">
-            	<tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>"><?php echo $course->__get('name'); ?></a>--></span><span><a href="">信息修改</a></span></td><td><span style="float:right"><a href="/ProjectTest/Logout.php">【退出】</a></span><span style="float:right"><a href="/ProjectTest/student/?<?php echo $class->OutputId();?>">【作业列表】</a></span></td></tr>
+            	<tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>"><?php echo $course->__get('name'); ?></a>--></span><span><a href="">信息修改</a></span></td><td><span style="float:right"><a href="../Logout.php">【退出】</a></span><span style="float:right"><a href="../student/?<?php echo $class->OutputId();?>">【作业列表】</a></span></td></tr>
             </table>
         	</div>
             <div id="message">

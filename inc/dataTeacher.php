@@ -70,7 +70,7 @@ class dataTeacher extends SecurityDB{
     }
     else return $res;
     }
-    function CheckPassword($username,$pwd){
+    function CheckPassword($username,$pwd, $uid=null){
       $data=self::SelectByPKey($username);
       if(!$data)
       return false;

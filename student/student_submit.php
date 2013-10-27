@@ -42,7 +42,7 @@ $homework=$class->GetHomework($homework_id);
     	<?php include_once('../course/formwork/main_menu.php'); ?>
     <div id="position">
                  <table style="width:100%; height:100%;">
-            	<tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>"><?php echo $course->__get('name'); ?></a>--></span><span><a href="./?id=<?php echo $course->__get('id'); ?>">作业提交</a>--></span><span><a href="">上传</a></span></td><td><span style="float:right"><a href="/ProjectTest/Logout.php?id=<?php echo $course->__get('id'); ?>">【退出】</a></span><span style="float:right"><a href="/ProjectTest/student/student_message.php?id=1">【个人信息修改】</a></span></td></tr>
+            	<tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>"><?php echo $course->__get('name'); ?></a>--></span><span><a href="./?id=<?php echo $course->__get('id'); ?>">作业提交</a>--></span><span><a href="">上传</a></span></td><td><span style="float:right"><a href="../Logout.php?id=<?php echo $course->__get('id'); ?>">【退出】</a></span><span style="float:right"><a href="./student_message.php?id=1">【个人信息修改】</a></span></td></tr>
             </table>
      </div>
      <div id="submit_table">
@@ -62,10 +62,10 @@ $homework=$class->GetHomework($homework_id);
             <tr id="td2"><td valign="middle"  >布置日期：	</td><td valign="middle" > <?php echo $sethomework['settime'];?></td></tr>
             <tr ><td valign="middle"  >截止日期</td><td valign="middle" ><?php echo $sethomework['deadline'];?></td></tr>
             <form action="../sub/AddHomework.php" method="post" enctype="multipart/form-data">
-            <tr id="td2"><td valign="middle">疑问：</td><td><textarea name="description" id="text"><?php echo $homework['description'];?></textarea></td></tr>
+            <tr id="td2"><td valign="middle">疑问：</td><td><textarea name="description" id="text"><?php if(!empty($homework['description']))echo $homework['description']; else echo "无";?></textarea></td></tr>
             <tr><td width="20%" valign="top" id="TableBody1">答案附件：<br></td>
             	<td valign="top">
-                	<input type="file" name="file" /> <a href="<?php echo $homework['file'];?>"><?php echo basename($homework['file']);?></a>
+                	<input type="file" name="file" /> <a href="<?php if(!empty($homework['file'])) echo $homework['file']; else echo"无";?>"><?php echo "";?></a>
                 </td>
             </tr>
     		<tr>

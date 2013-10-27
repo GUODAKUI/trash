@@ -10,7 +10,9 @@ include_once(dirname(__FILE__).'/globals/globals.php');
 class LoginClass{
   function __construct(){
     ob_start();
+    if(!isset($_SESSION)){
     session_start();
+}
   }
   function logout($jump=true){
     $type=$_SESSION['type'];

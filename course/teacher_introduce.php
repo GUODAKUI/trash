@@ -19,7 +19,10 @@
 <div id="all">
     	<?php include_once('./formwork/main_menu.php'); 
 			$data=$course->getInformation('TEACHERS');
+			if(!empty($_GET['page']))
 			$page=intval($_GET['page']);
+			else
+			$page=0;
   			if(!empty($page))
  			for($i=0;$i<($page-1)*3;++$i)
   			next($data);

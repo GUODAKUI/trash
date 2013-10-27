@@ -8,5 +8,6 @@ ob_start();
 include_once('login.php');
 $login =new LoginClass;
 $login->logout();
+
 die();
 ?>

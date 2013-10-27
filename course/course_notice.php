@@ -1,20 +1,23 @@
-<?
+<?php
    include_once(dirname(__FILE__).'/../globals/globals.php');
   include_once('./course.php');  
   $course=new Course;
   $data=$course->getInformation('NOTICE');
 
 	//session_start();
-	if($_POST[check])
+	if(@$_POST['check'])
 	{
-		if($_POST[check]==$_SESSION[check_pic])
+		if($_POST['check']==$_SESSION['check_pic'])
 		{//echo "ok";
 		}
 		else
 		{//echo "error";
 		}
 	}
+	if(!empty($_GET['page']))
 	  $page=intval($_GET['page']);
+	  else
+	  $page=0;
   			if(!empty($page))
  			for($i=0;$i<($page-1)*15;++$i)
   			next($data);

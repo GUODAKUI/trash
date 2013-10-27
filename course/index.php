@@ -1,6 +1,8 @@
 ﻿<?php
-ob_start(); 
-include_once(dirname(__FILE__).'/../globals/globals.php');
+ob_start();
+//include_once(dirname(__FILE__).'/../globals/globals.php');
+//include_once('../globals/globals.php');
+ $GLOBALS['PATH']='/ProjectTest/';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

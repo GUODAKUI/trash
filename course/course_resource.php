@@ -18,7 +18,10 @@
 		  include_once('../fun/page.php');
 		  include_once('./formwork/main_menu.php');
 		  $data=$course->GetInformation('RESOURCE');
+		  if(!empty($_GET['page']))
 		   $page=intval($_GET['page']);
+		   else
+		   $page=0;
   			if(!empty($page))
  			for($i=0;$i<($page-1)*15;++$i)
   			next($data);

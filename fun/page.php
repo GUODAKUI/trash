@@ -1,7 +1,8 @@
-<?
+<?php
 	function _PAGEFT($totle, $displaypg = 20, $url = '') {
 
-		global $page, $firstcount, $pagenav, $_SERVER;
+		global $page, $firstcount, $pagenav , $_SERVER;
+		
 
 		$GLOBALS["displaypg"] = $displaypg;
 
@@ -18,7 +19,7 @@
 		//echo $url_query;//page=2
 		if ($url_query) {
 			//echo $url_query;
-			$url_query = ereg_replace("(^|&)page=$page", "", $url_query);
+			$url_query =  preg_replace("/(^|&)page=$page/", "", $url_query);
 			//echo $url_query;
 			//echo $parse_url["query"];//page=2
 			$url = str_replace($parse_url["query"], $url_query, $url);
@@ -37,9 +38,20 @@
 		$nextpg = ($page == $lastpg ? 0 : $page +1); //下一页
 		$firstcount = ($page -1) * $displaypg;
 
+		/*if($totle==1)
+		$gdk=$firstcount +1;
+		else
+		$gdk=0;*/
+		$gdk=($totle ? ($firstcount +1) : 0);
 		//开始分页导航条代码：
-		$pagenav = "显示第 <B>" . ($totle ? ($firstcount +1) : 0) . "</B>-<B>" . min($firstcount + $displaypg, $totle) . "</B> 条记录，共 $totle 条记录";
-
+		//$pagenav = "显示第 <B>".$gdk. "</B>-<B>" . min($firstcount + $displaypg, $totle) . "</B> 条记录，共 $totle 条记录";
+		$pagenav = "显示第 <B>";
+		$pagenav.= $gdk;
+		$pagenav.= "</B>-<B>";
+		//$pagenav.= "<B>";
+		$pagenav.=  min($firstcount + $displaypg, $totle) ;
+		$pagenav.=  "</B> 条记录，共 $totle 条记录";
+		
 		//如果只有一页则跳出函数：
 		if ($lastpg <= 1)
 			return false;

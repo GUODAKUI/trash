@@ -7,8 +7,9 @@
 <link rel="stylesheet" type="text/css" href="../style/teacher_homework.css" />
 <link rel="stylesheet" type="text/css" href="../style/main_menu.css" />
 <link rel="stylesheet" type="text/css" href="../style/foot.css" />
-<?
+<?php
 session_start() ;
+//require_once('../fun/page.php');
 include_once('../fun/page.php');
 include_once('../student/class.php');
 $class=new Classr('TEACHER');
@@ -51,7 +52,7 @@ next($data);
                         
                         <td valign="middle" id="tablebody1"><?php echo $v['num'];?></td>
                         
-                        <td valign="middle" id="tablebody1"><a href="/ProjectTest/teacher/teacher_homework_list.php?<?php echo $class->OutputId(); echo "&homework_id={$v['id']}" ;?>"><?php echo $v['title'];?></a></td>
+                        <td valign="middle" id="tablebody1"><a href="./teacher_homework_list.php?<?php echo $class->OutputId(); echo "&homework_id={$v['id']}" ;?>"><?php echo $v['title'];?></a></td>
                         
                         <td valign="middle" id="tablebody1"><?php echo $v['settime'];?></td>
                         <td valign="middle" id="tablebody1"><?php echo $v['deadline'];?></td>

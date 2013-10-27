@@ -13,7 +13,11 @@
   $class=new Classr('STUDENT');
   $data=$class->GetAllHomework(); 
   
+  if(isset($_GET['page']))
   $page=intval($_GET['page']);
+  else
+  $page=0;
+  
   if(!empty($page))
   for($i=0;$i<($page-1)*15;++$i)
   next($data);
@@ -29,7 +33,7 @@
         <div id="body">
         	<div id="position">
              <table style="width:100%; height:100%;">
-              <tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>" ><?php echo $course->__get('name'); ?></a>--></span><span><a href="">作业提交</a></span></td><td><span style="float:right"><a href="/ProjectTest/Logout.php?id=<?php echo $_GET['id'];?>">【退出】</a></span><span style="float:right"><a href="/ProjectTest/student/student_message.php?<?php $class->OutputId();?>">【个人信息修改】</a></span></td></tr>
+              <tr><td><span>你现在的位置：</span><span><a href="../course/?id=<?php echo $course->__get('id'); ?>" ><?php echo $course->__get('name'); ?></a>--></span><span><a href="">作业提交</a></span></td><td><span style="float:right"><a href="../index.php">【退出】</a></span><span style="float:right"><a href="./student_message.php?<?php $class->OutputId();?>">【个人信息修改】</a></span></td></tr>
             </table>
         	</div>
             <div id="submit_work">
@@ -57,11 +61,21 @@
                         <td valign="middle" ><?php echo substr($v['settime'],0,10)?></td>
                         <td valign="middle" ><?php echo $v['deadline']?></td>
                         <td valign="middle" >
-                        <?php echo $res['settime']; ?>
+                        <?php 
+						if(!empty($res['settime']))
+						echo $res['settime']; 
+						else
+						echo "没有提交";
+						?>
                         </td>
                         
                         <td valign="middle" >
-                        <?php echo $res['score']?>
+                        <?php 
+						if(!empty($res['score']))
+						echo $res['settime']; 
+						else
+						echo "0";
+						?>
                         </td>
                         <td valign="middle" >
                         <?php echo empty($res)?'<font color="red" >未提交</font>':'已提交'?>

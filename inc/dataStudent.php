@@ -87,7 +87,7 @@ class dataStudent extends   SecurityDB{
       return $data;
     
     }
-     function CheckPassword($username,$pwd){
+     function CheckPassword($username,$pwd, $uid=null){
       $data=self::SelectByPKey($username);
       if(!$data)
         return false;

@@ -1,8 +1,8 @@
 <?php
   class Mysqls{
 	private $dblink='';//数据库连接
-	private $config = array('host'=>"127.0.0.1",'username'=>"root",'password'=>"3139",'dbname'=>"website_database");//当前使用
-	
+	//private $config = array('host'=>"127.0.0.1",'username'=>"root",'password'=>"3139",'dbname'=>"website_database");//当前使用
+	private $config = array('host'=>"127.0.0.1",'username'=>"root",'password'=>"a123456",'dbname'=>"website_database");
 	function __construct(){
 	}
 	function query($sql,$affect_num=false){//affect_num:是否返回影响行数

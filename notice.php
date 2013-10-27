@@ -1,5 +1,6 @@
 <?php
-//HEHE
+
+
 	include_once('./inc/dataInformation.php');
 	$id=intval($_GET['id']);
 	if(empty($id)){
@@ -30,7 +31,7 @@
     	<div class="_body_top">
         	<div class="_block" style="height:5px; width:100%"></div>
             <div style="width:3%;"></div>
-        	<div style="width:97%;	margin:0 auto;"><span>您现在的位置：</span><span><a href="/ProjectTest/index.php">首页</a>--></span><span>新闻公告</span></div>
+        	<div style="width:97%;	margin:0 auto;"><span>您现在的位置：</span><span><a href="./index.php">首页</a>--></span><span>新闻公告</span></div>
         </div>
         <div class="_right"> 
         	<div style="height:20px; "></div>

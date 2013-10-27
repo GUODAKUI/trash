@@ -90,7 +90,9 @@ xmlhttp.send();
             				   <?php 
 							   		$count=0;
 							   		foreach($Data as $k=>$v){
-								   	echo '<li><a href=./course/index.php?id='.$v['course_id'].'>&nbsp;'.$v['name'].'</a></li>';
+									/*<li><span ><a href=<?php echo '"../course/index.php?id='.$v['course_id'].'"'?></li>*/
+
+								   	echo '<li><a href=../course/index.php?id='.$v['course_id'].'>&nbsp;'.$v['name'].'</a></li>';
 									if(++$count>6)break;									
 								   }?> 
                         </ul>
@@ -106,7 +108,7 @@ xmlhttp.send();
 							   		
 									if(is_array($year[1]))
 							   		foreach($year[1] as $v){								   
-								   	echo '<li><a href=./course/index.php?id='.$v['course_id'].'>&nbsp;'.$v['name'].'</a></li>';									
+								   	echo '<li><a href=../course/index.php?id='.$v['course_id'].'>&nbsp;'.$v['name'].'</a></li>';									
 								   }?> 
                         </ul>
                
